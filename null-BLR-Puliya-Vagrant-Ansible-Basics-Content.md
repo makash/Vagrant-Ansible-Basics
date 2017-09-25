@@ -22,7 +22,7 @@ https://www.virtualbox.org/wiki/Downloads
 - Download and install
 - *In Windows you will have to manually add installation folder to the path*
 
-    setx PATH %PATH%;<path to vbox folder>
+    setx PATH %PATH%;path/to/vbox/folder
 
 ## Linux Users 
 Download and just run this command 
