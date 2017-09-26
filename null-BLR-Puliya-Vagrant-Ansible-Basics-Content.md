@@ -20,8 +20,9 @@ https://www.virtualbox.org/wiki/Downloads
 
 ## Windows and OS X Users
 - Download and install
-- *In Windows you may need to logout and login again for it to be visible in the path*
+- *In Windows you will have to manually add installation folder to the path*
 
+    setx PATH %PATH%;path/to/vbox/folder
 
 ## Linux Users 
 Download and just run this command 
@@ -202,7 +203,7 @@ Such as
 
     $ mkdir vagrant_two_machines
     $ cd vagrant_two_machines
-    $ wget https://bit.ly/puliya-file -o Vagrantfile
+    $ wget https://bit.ly/puliya-file -O Vagrantfile
     $ vagrant up
     $ vagrant status 
 
@@ -254,7 +255,7 @@ All we want to see is, if we can execute a command in an automated manner agains
 
     $ ansible db \ 
     --inventory-file=inventory \
-    --module-name=ping 
+    --module-name=ping \
     --user=vagrant \
     --private-key=.vagrant/machines/db/virtualbox/private_key
 
@@ -263,10 +264,15 @@ All we want to see is, if we can execute a command in an automated manner agains
 
     $ ansible web \ 
     --inventory-file=inventory \
-    --module-name=ping 
+    --module-name=ping \
     --user=vagrant \
     --private-key=.vagrant/machines/web/virtualbox/private_key
 
+
+###Note
+    1) Private key should have permissions to be only accessible by the user, i.e., chmod 0400 will help.
+    2) inventory file should not have executable permission.
+    3) Files in folders shared with Windows will get their executable permissions set.
 
 ## Using Ansible is awesome
 - Define a way to install and configure software<!-- .element: class="fragment" data-fragment-index="1" -->
