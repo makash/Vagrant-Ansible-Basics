@@ -269,10 +269,10 @@ All we want to see is, if we can execute a command in an automated manner agains
     --private-key=.vagrant/machines/web/virtualbox/private_key
 
 
-###Note
-    1) Private key should have permissions to be only accessible by the user, i.e., chmod 0400 will help.
-    2) inventory file should not have executable permission.
-    3) Files in folders shared with Windows will get their executable permissions set.
+### Note
+1. Private key should have permissions to be only accessible by the user, i.e., chmod 0400 will help.
+2. `inventory` file should not have executable permission.
+3. Files in folders shared with Windows will get their executable permissions set.
 
 ## Using Ansible is awesome
 - Define a way to install and configure software<!-- .element: class="fragment" data-fragment-index="1" -->
